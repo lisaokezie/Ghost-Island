@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 36
+  controlID: 12
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 59
+  controlID: 94
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -359,10 +359,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 26}
-      m_SelectedIDs: ec44fcff
-      m_LastClickedID: -244500
-      m_ExpandedIDs: fe92fdff
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: eab7ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -424,20 +424,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Prefabs/Items
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/lisa/Desktop/Ghost-Island-STA/Ghost-Island/Ghost Island
+  m_LastProjectPath: /Users/johannes/Desktop/5. Semester/Interactive 3D Graphics/Studienarbeit/Ghost-Island/Ghost
+    Island
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d22f0000
     m_LastClickedID: 12242
-    m_ExpandedIDs: 0000000062cc000086cc000040cd000054cd000002ce00000cce000080ce000082ce000090ce00009ece00007ccf0000a8d000004ed100009ed10000c0d10000e8d1000018d20000
+    m_ExpandedIDs: 000000007c3d00001c51000092510000a8530000545d0000805d00004e5e0000505e0000805e00009c5e0000746100004665000096670000386800007c680000da680000e2690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -465,7 +465,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 524.87695}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000062cc000086cc000040cd000054cd000002ce00000cce000080ce000082ce000090ce00009ece00007ccf0000a8d000004ed100009ed10000c0d10000e8d1000018d20000
+    m_ExpandedIDs: ffffffff000000007c3d00001c51000092510000a8530000545d0000805d00004e5e0000505e0000805e00009c5e0000746100004665000096670000386800007c680000da680000e2690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,13 +614,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.21387084, y: -0.43494976, z: 0.1070844, w: 0.8682065}
+    m_Target: {x: 0.48444006, y: -0.13998239, z: 0.07898367, w: 0.8600322}
     speed: 2
-    m_Value: {x: -0.21387085, y: 0.4349498, z: -0.1070844, w: -0.8682065}
+    m_Value: {x: 0.4869763, y: -0.13973278, z: 0.07939661, w: 0.8585016}
   m_Size:
     m_Target: 2.8578837
     speed: 2
-    m_Value: 2.8579762
+    m_Value: 2.8578837
   m_Ortho:
     m_Target: 0
     speed: 2
