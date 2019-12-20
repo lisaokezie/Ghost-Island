@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody playerRB;
     private GameObject player;
-    public float speed = 5;
+    public float speed = 300;
 
     PlayerHealth playerHealth;
 
