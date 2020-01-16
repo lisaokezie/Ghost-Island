@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+           
             Attack();
         }
         

@@ -289,9 +289,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4908294693866282834}
+  - component: {fileID: 5677297576875962787}
+  - component: {fileID: 6295499760338162583}
   m_Layer: 0
   m_Name: Pilzgruppe 1
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,3 +315,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5677297576875962787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8234442537973280065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6197445, y: 0.5956431, z: 0.5406189}
+  m_Center: {x: -0.5428231, y: 0.2021786, z: -0.13674419}
+--- !u!114 &6295499760338162583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8234442537973280065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7949389cfdc0147cebfe257d55eb7034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 82983e5e563ca4509a32c344f608aa7c
+  - enabled: 1
+    path: Assets/Scenes/GhostIsland1812.unity
+    guid: f54a8fe9ceb25ef4a87e8380c3c5d7be
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: a8614537acefd495a81371e7e8a1bea9
   m_configObjects: {}

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-
     public float fireRate = 1;
     private float nextFire = 0;
 
@@ -13,9 +12,12 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject weapon;
     public bool isGameOver = false;
+    //PlayerHealth playerHealth;
+
+    //private GameObject player;
 
     public bool hasWeapon = false;
-
+    
 
 
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
 
         weapon.SetActive(false);
+        //player = GameObject.Find("FPSController");
+        //playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -56,6 +60,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    
+
+
+
     //Wenn eine Kolllision mit einem GameObjekt (Tag: "Weapon") stattfindet, wird die Waffe aktiviert
     void OnTriggerEnter(Collider other)
     {
@@ -71,5 +79,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player wurde angegriffen");
             isGameOver = true;
         }
+
+        
     }
 }

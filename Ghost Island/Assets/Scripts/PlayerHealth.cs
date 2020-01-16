@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 
 public class PlayerHealth : MonoBehaviour
-
 {
 
     public int startingHealth = 100;
@@ -29,7 +28,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-       
         damaged = true;
 
         currentHealth -= amount;
@@ -44,6 +42,15 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player ist gestorben!");
             Death();
         }
+    }
+
+    
+
+
+    public void Heal()
+    {
+        currentHealth += 5;
+        healthSlider.value = currentHealth;
     }
 
     void Death()
