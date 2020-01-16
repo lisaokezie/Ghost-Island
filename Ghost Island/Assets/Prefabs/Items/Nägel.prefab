@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7985728954698209789}
   - component: {fileID: 4462938896524469508}
   - component: {fileID: 8519548308464984015}
+  - component: {fileID: 622761548947931224}
   m_Layer: 0
   m_Name: "N\xE4gel"
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 5869445892770265634, guid: 38b3dbf919a68234fb443103889f8dba, type: 3}
+--- !u!65 &622761548947931224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725624777939046872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1581986, y: 0.08105683, z: 0.24211884}
+  m_Center: {x: 0.0003272295, y: 0.0017482042, z: -0.000654459}

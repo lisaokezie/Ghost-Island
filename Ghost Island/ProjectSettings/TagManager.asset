@@ -7,6 +7,12 @@ TagManager:
   - Enemy
   - Weapon
   - PowerUp
+  - Hammer
+  - Nails
+  - Wood
+  - Ladder
+  - Key
+  - Item
   layers:
   - Default
   - TransparentFX

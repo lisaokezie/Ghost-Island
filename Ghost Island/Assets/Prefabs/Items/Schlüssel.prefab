@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3474906025262014720}
   - component: {fileID: 7135340035696532985}
   - component: {fileID: 2941376941994288946}
+  - component: {fileID: 1731300474435145364}
   m_Layer: 0
-  m_Name: "Schl\xFCssel"
-  m_TagString: Untagged
+  m_Name: "Schlu\u0308ssel"
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -6042843973029681290, guid: d47f5a36e415b9c449f035195b0c06fb, type: 3}
+--- !u!65 &1731300474435145364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879136908626798885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.052506536, y: 0.13133276, z: 0.013701149}
+  m_Center: {x: -0.00087524485, y: 0.03150348, z: 0}

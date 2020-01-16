@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6912673029382544502}
   - component: {fileID: 923860339535044751}
   - component: {fileID: 5117841102732679748}
+  - component: {fileID: 39947842358539681}
   m_Layer: 0
   m_Name: Holzbrett
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 1104245157416999732, guid: 75a5b80cd8ada5d48aed7693775ea71a, type: 3}
+--- !u!65 &39947842358539681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508389324093969491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0421512, y: 0.09817493, z: 0.26024395}
+  m_Center: {x: -0.0055367947, y: -0.004683137, z: 0.0024368465}
