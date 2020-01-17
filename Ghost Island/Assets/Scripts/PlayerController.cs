@@ -14,15 +14,17 @@ public class PlayerController : MonoBehaviour
     public bool isGameOver = false;
     public bool hasWeapon = false;
 
-    //CollectItems collectItems;
-
+    // Items
+    public int collectedItems = 0;
     public GameObject[] itemsUI;
     public GameObject[] items;
 
-    // Start is called before the first frame update
+    public GameObject ladder;
+
     void Start()
     {
 
+        ladder.SetActive(false);
         weapon.SetActive(false);
         //player = GameObject.Find("FPSController");
         //playerHealth = player.GetComponent<PlayerHealth>();
@@ -56,14 +58,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    
+    void checkItemNumber()
     {
-        
-
-        
-        
+        if(collectedItems == 5)
+        {
+            ladder.SetActive(true);
+            Debug.Log("Baumhausleiter");
+        }
     }
-
 
     void showUI(int i)
     {
@@ -101,8 +104,11 @@ public class PlayerController : MonoBehaviour
                {
                    if(other.gameObject == items[i])
                     {
-                      showUI(i);
-                    Destroy(other.gameObject);
+                        showUI(i);
+                        Destroy(other.gameObject);
+                         collectedItems++;
+                        checkItemNumber();
+                        Debug.Log("Item aufgesammelt");
                     }
                }
         }
