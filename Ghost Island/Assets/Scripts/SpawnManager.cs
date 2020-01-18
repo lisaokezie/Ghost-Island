@@ -11,20 +11,48 @@ public class SpawnManager : MonoBehaviour
     public float delay = 2;
     public float interval = 1.5f;
 
+
+    public GameObject[] spawnPoints;
+
+    public static int enemiesAlive = 0;
+
     void Start()
     {
-        InvokeRepeating("SpawnEnemies", delay, interval);
-        SpawnEnemies();
+        while (enemiesAlive < 20) { 
+            InvokeRepeating("SpawnEnemies", delay, interval);
+            enemiesAlive++;
+           
+        }
+    }
+
+    
+
+    private void Update()
+    {
+        
+    }
+
+
+    public static void killEnemy()
+    {
+        enemiesAlive = enemiesAlive-1;
     }
 
     void SpawnEnemies()
     {
         int randIndex = Random.Range(0, enemiesPrefabs.Length);
-        float randXPos = Random.Range(-spawnXRange, spawnXRange);
+        //float randXPos = Random.Range(-spawnXRange, spawnXRange);
 
-      // Instantiate(enemiesPrefabs[randIndex], new Vector3(randXPos, 2, spawnZPos), enemiesPrefabs[randIndex].transform.rotation);
-        Instantiate(enemiesPrefabs[randIndex], new Vector3(386, 7, 736), enemiesPrefabs[randIndex].transform.rotation);
+        // Instantiate(enemiesPrefabs[randIndex], new Vector3(randXPos, 2, spawnZPos), enemiesPrefabs[randIndex].transform.rotation);
 
+        //Instantiate(enemiesPrefabs[randIndex], new Vector3(386, 7, 736), enemiesPrefabs[randIndex].transform.rotation);
+
+
+        GameObject place = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+        Vector3 position = place.transform.position;
+
+        Instantiate(enemiesPrefabs[randIndex], position, enemiesPrefabs[randIndex].transform.rotation);
 
 
     }

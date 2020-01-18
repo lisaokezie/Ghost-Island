@@ -6,9 +6,16 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody playerRB;
     private GameObject player;
-    public float speed = 300;
+    public float speed = 1;
 
     PlayerHealth playerHealth;
+
+    //public GameObject spawnManager;
+
+    //public SpawnManager spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+    //public static int enemyCount;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,21 +23,30 @@ public class Enemy : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         player = GameObject.Find("FPSController");
 
-        // Player Health
         playerHealth = player.GetComponent<PlayerHealth>();
+
+        //enemyCount = SpawnManager.enemiesAlive;
+
+        //spawnManager = GameObject.Find("SpawnManager");
+        //spawnManager
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        playerRB.AddForce(lookDirection * speed * Time.deltaTime);
+        //transform.LookAt(player.transform);
+        //transform.Translate(0, 0, speed * Time.deltaTime);
 
-        //if (transform.position.y < -10)
-      //  {
-         //   Destroy(gameObject);
-       // }
+        //enemyCount = SpawnManager.enemiesAlive;
+
+        transform.LookAt(player.transform);
+
+        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+            
+       playerRB.AddForce(lookDirection * speed * Time.deltaTime);
+        
     }
 
     void Attack()
@@ -50,6 +66,8 @@ public class Enemy : MonoBehaviour
         {
            
             Attack();
+            Destroy(gameObject);
+            SpawnManager.killEnemy();
         }
         
     }
