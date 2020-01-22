@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
     public GameObject weapon;
     public bool isGameOver = false;
     public bool hasWeapon = false;
+    public bool hasWon = false;
+    public bool isPaused = false;
+
+    // Screens
+    public GameObject winnerScreen;
+    public GameObject pauseScreen;
 
     // Items
     public int collectedItems = 0;
@@ -24,6 +30,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
+        pauseScreen.SetActive(false);
+        winnerScreen.SetActive(false);
         ladder.SetActive(false);
         weapon.SetActive(false);
         //player = GameObject.Find("FPSController");
@@ -45,6 +53,27 @@ public class PlayerController : MonoBehaviour
         if (hasWeapon == false)
         {
             weapon.SetActive(false);
+        }
+
+        if(hasWon == true)
+        {
+            winnerScreen.SetActive(true);
+        }
+
+        // Pause Screen
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+           
+            if (!isPaused)
+            {
+                PauseGame();
+                Debug.Log("Pause Game");
+            }
+            else
+            {
+                ContinueGame();
+                Debug.Log("Continue");
+            }
         }
 
     }
@@ -73,6 +102,19 @@ public class PlayerController : MonoBehaviour
        itemsUI[i].SetActive(true);
     }
 
+    void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseScreen.SetActive(true);
+        isPaused = true;
+    }
+
+    void ContinueGame() {
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
+        isPaused = false;
+    }
+
     //Wenn eine Kolllision mit einem GameObjekt (Tag: "Weapon") stattfindet, wird die Waffe aktiviert
     void OnTriggerEnter(Collider other)
     {
@@ -89,15 +131,6 @@ public class PlayerController : MonoBehaviour
             isGameOver = true;
         }
 
-        //if (other.gameObject.CompareTag("Hammer"))
-        //{
-
-        //    //collectItems.collectItem(1);
-        //    Debug.Log("Mit Item kollidiert");
-        //    itemsUI[0].SetActive(true);
-
-        //}
-
         if (other.gameObject.CompareTag("Item"))
         {
             for (int i = 0; i < items.Length; i++)
@@ -112,21 +145,6 @@ public class PlayerController : MonoBehaviour
                     }
                }
         }
-
-        // Collision mit Items prüfen
-        //    if (other.gameObject.CompareTag("Item"))
-        //{
-        //    Debug.Log("Mit Item kollidiert");
-        //    for(int i = 0; i < items.Length; i++)
-        //    {
-        //        if (other.gameObject == items[i])
-        //        {
-        //            collectItems.collectItem(i);
-        //        }
-        //    }
-        //}
-
-
 
     }
 }

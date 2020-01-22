@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider healthSlider;
 
-    bool isDead;                                              
+    public bool isDead;                                              
     bool damaged;
 
     // Start is called before the first frame update
@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth;
 
         
-        // If the player has lost all it's health and the death flag hasn't been set yet...
         if (currentHealth <= 0 && !isDead)
         {
             Debug.Log("Player ist gestorben!");
