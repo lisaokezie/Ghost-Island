@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        while (enemiesAlive < 20) { 
+        while (enemiesAlive < 12 && enemiesAlive >= 0) { 
             InvokeRepeating("SpawnEnemies", delay, interval);
             enemiesAlive++;
            
@@ -54,6 +54,6 @@ public class SpawnManager : MonoBehaviour
 
         Instantiate(enemiesPrefabs[randIndex], position, enemiesPrefabs[randIndex].transform.rotation);
 
-
+        enemiesAlive++;
     }
 }

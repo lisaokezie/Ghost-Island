@@ -43,9 +43,10 @@ public class Enemy : MonoBehaviour
 
         transform.LookAt(player.transform);
 
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        // Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        transform.position += transform.forward * speed * Time.deltaTime;
             
-       playerRB.AddForce(lookDirection * speed * Time.deltaTime);
+       // playerRB.AddForce(lookDirection * speed * Time.deltaTime);
         
     }
 

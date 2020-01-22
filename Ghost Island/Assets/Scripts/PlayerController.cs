@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
 
-        if (Input.GetKey(KeyCode.Mouse1) && Time.time > nextFire && hasWeapon)
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
         {
             Instantiate(projectilePrefab, Camera.main.transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
