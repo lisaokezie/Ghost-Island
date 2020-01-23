@@ -7,8 +7,10 @@ public class GameOverManager : MonoBehaviour
 
     PlayerHealth playerHealth;
     public GameObject gameOverScreen;
+   
 
     private GameObject player;
+
 
     void Start()
     {
@@ -16,6 +18,9 @@ public class GameOverManager : MonoBehaviour
 
         player = GameObject.Find("FPSController");
         playerHealth = player.GetComponent<PlayerHealth>();
+
+
+ 
     }
 
     void Update()

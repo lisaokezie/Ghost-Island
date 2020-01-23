@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("GhostIsland1812");
     }
 
-    public void GoToMenu()
+    public static void GoToMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }

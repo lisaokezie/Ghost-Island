@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 1;
     private float nextFire = 0;
 
-    
     public GameObject projectilePrefab;
     public GameObject weapon;
+
+
+   // UIManager uiManager;
     public bool isGameOver = false;
     public bool hasWeapon = false;
     public bool hasWon = false;
@@ -29,14 +31,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
         pauseScreen.SetActive(false);
         winnerScreen.SetActive(false);
         ladder.SetActive(false);
         weapon.SetActive(false);
-        //player = GameObject.Find("FPSController");
-        //playerHealth = player.GetComponent<PlayerHealth>();
-
+       
         for (int i = 0; i < itemsUI.Length; i++)
         {
             itemsUI[i].SetActive(false);
@@ -67,19 +66,27 @@ public class PlayerController : MonoBehaviour
             if (!isPaused)
             {
                 PauseGame();
-                Debug.Log("Pause Game");
             }
             else
             {
                 ContinueGame();
-                Debug.Log("Continue");
+               
             }
         }
 
-    }
+
+        // Game Over/Won: Press key to go back to Menu
+        if (isPaused || isGameOver || hasWon)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                UIManager.GoToMenu();
+            }
+
+        }
+        }
     void LateUpdate()
     {
-
         if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
         {
             Instantiate(projectilePrefab, Camera.main.transform.position, transform.rotation);
