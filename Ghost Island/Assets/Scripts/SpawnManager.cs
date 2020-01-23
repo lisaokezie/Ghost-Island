@@ -10,7 +10,10 @@ public class SpawnManager : MonoBehaviour
 
     public float delay = 2;
     public float interval = 1.5f;
+    private GameObject player;
 
+    PlayerController pc;
+ 
 
     public GameObject[] spawnPoints;
 
@@ -18,14 +21,15 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        while (enemiesAlive < 12 && enemiesAlive >= 0) { 
+        player = GameObject.Find("FPSController");
+        pc = player.GetComponent<PlayerController>();
+
+        while (enemiesAlive < 12 && enemiesAlive >= 0 && (!pc.isGameOver || !pc.hasWon)) { 
             InvokeRepeating("SpawnEnemies", delay, interval);
             enemiesAlive++;
            
         }
     }
-
-    
 
     private void Update()
     {

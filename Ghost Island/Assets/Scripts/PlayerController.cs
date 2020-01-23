@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         winnerScreen.SetActive(false);
+        ladder = GameObject.Find("Leiter");
         ladder.SetActive(false);
         weapon.SetActive(false);
        
@@ -44,15 +45,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(hasWeapon)
-        {
-            weapon.SetActive(true);
-        }
+        //if(hasWeapon)
+        //{
+        //    weapon.SetActive(true);
+        //}
 
-        if (hasWeapon == false)
-        {
-            weapon.SetActive(false);
-        }
+        //if (hasWeapon == false)
+        //{
+        //    weapon.SetActive(false);
+        //}
 
         if(hasWon == true)
         {
@@ -109,7 +110,7 @@ public class PlayerController : MonoBehaviour
        itemsUI[i].SetActive(true);
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         pauseScreen.SetActive(true);
@@ -153,5 +154,9 @@ public class PlayerController : MonoBehaviour
                }
         }
 
+        if (other.gameObject.CompareTag("WinTrigger"))
+        {
+            hasWon = true;
+        }
     }
 }

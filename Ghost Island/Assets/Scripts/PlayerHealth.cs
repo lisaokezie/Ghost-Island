@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
 
     public bool isDead;                                              
-    bool damaged;
+    //bool damaged;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        damaged = true;
+        //damaged = true;
 
         currentHealth -= amount;
 
@@ -40,10 +40,14 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Player ist gestorben!");
             Death();
+            PauseGame();  
         }
     }
 
-    
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
 
 
     public void Heal()

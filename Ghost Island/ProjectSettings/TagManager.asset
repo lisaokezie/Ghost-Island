@@ -13,6 +13,7 @@ TagManager:
   - Ladder
   - Key
   - Item
+  - WinTrigger
   layers:
   - Default
   - TransparentFX
