@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, Camera.main.transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
+            audioManager.PlayShootAudio();
         }
     }
 
