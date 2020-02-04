@@ -14,6 +14,7 @@ TagManager:
   - Key
   - Item
   - WinTrigger
+  - Holz
   layers:
   - Default
   - TransparentFX

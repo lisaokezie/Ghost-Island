@@ -8,6 +8,7 @@ public class GameOverManager : MonoBehaviour
     PlayerHealth playerHealth;
     public GameObject gameOverScreen;
     private GameObject player;
+    AudioManager audioManager;
 
 
     void Start()
@@ -17,8 +18,10 @@ public class GameOverManager : MonoBehaviour
         player = GameObject.Find("FPSController");
         playerHealth = player.GetComponent<PlayerHealth>();
 
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
- 
+
+
     }
 
     void Update()
@@ -27,6 +30,7 @@ public class GameOverManager : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
             Debug.Log("Game Over!");
+            audioManager.PlayGameOverAudio();
         }
     }
 }

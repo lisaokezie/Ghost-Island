@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject ladder;
 
+    AudioManager audioManager;
+
     void Start()
     {
         pauseScreen.SetActive(false);
@@ -36,7 +38,8 @@ public class PlayerController : MonoBehaviour
         ladder = GameObject.Find("Leiter");
         ladder.SetActive(false);
         weapon.SetActive(false);
-       
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         for (int i = 0; i < itemsUI.Length; i++)
         {
             itemsUI[i].SetActive(false);
@@ -132,6 +135,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(true);
             Destroy(other.gameObject);
             hasWeapon = true;
+            audioManager.PlayWeaponAudio();
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -150,13 +154,15 @@ public class PlayerController : MonoBehaviour
                          collectedItems++;
                         checkItemNumber();
                         Debug.Log("Item aufgesammelt");
-                    }
+                        audioManager.PlayItemAudio();
+                }
                }
         }
 
         if (other.gameObject.CompareTag("WinTrigger"))
         {
             hasWon = true;
+            audioManager.PlayWinMusicAudio();
         }
     }
 }

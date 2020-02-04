@@ -9,12 +9,18 @@ public class PowerUp : MonoBehaviour
 
     private GameObject player;
 
+    AudioManager audioManager;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("FPSController");
         playerHealth = player.GetComponent<PlayerHealth>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        
     }
 
     // Update is called once per frame
@@ -41,6 +47,8 @@ public class PowerUp : MonoBehaviour
             Debug.Log("Pilz heilt Player");
             Heal();
             Destroy(gameObject);
+            audioManager.PlayEnergyAudio();
+          
         }
     }
 }
