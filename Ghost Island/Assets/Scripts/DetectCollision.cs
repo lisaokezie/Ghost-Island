@@ -8,8 +8,8 @@ public class DetectCollision : MonoBehaviour
     {
         
             Debug.Log(other.gameObject.name);
-           Destroy(gameObject);
-           Destroy(other.gameObject);
-        
+        Destroy(gameObject);
+        Destroy(other.gameObject);
+
     }
 }

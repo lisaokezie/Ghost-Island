@@ -5,15 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float fireRate = 1;
-    private float nextFire = 0;
+    //public float fireRate = 1;
+    //private float nextFire = 0;
 
     public GameObject projectilePrefab;
     public GameObject weapon;
     public GameObject ShootingPosition;
 
-    public GameObject Flash;
-    public GameObject MuzzleLight;
+    //public GameObject Flash;
+    //public GameObject MuzzleLight;
+
+    // public ParticleSystem MuzzleFlash;
 
    // UIManager uiManager;
     public bool isGameOver = false;
@@ -49,13 +51,14 @@ public class PlayerController : MonoBehaviour
             itemsUI[i].SetActive(false);
         }
 
-        Flash.SetActive(false);
+        //Flash.SetActive(false);
     }
 
     private void Update()
     {
-        Flash.SetActive(false);
-        MuzzleLight.SetActive(false);
+        //Flash.SetActive(false);
+        //MuzzleLight.SetActive(false);
+
 
         if (hasWeapon)
         {
@@ -72,14 +75,16 @@ public class PlayerController : MonoBehaviour
             winnerScreen.SetActive(true);
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
-        {
-            Flash.SetActive(true);
-            MuzzleLight.SetActive(true);
-            Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
-            nextFire = Time.time + fireRate;
-            audioManager.PlayShootAudio();
-        }
+        //if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
+        //{
+        //    MuzzleFlash.Play();
+
+        //      Flash.SetActive(true);
+        //      MuzzleLight.SetActive(true);
+        //      Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
+        //    nextFire = Time.time + fireRate;
+        //audioManager.PlayShootAudio();
+        //}
 
         // Pause Screen
         if (Input.GetKeyDown(KeyCode.P))
@@ -186,4 +191,5 @@ public class PlayerController : MonoBehaviour
             audioManager.PlayWinMusicAudio();
         }
     }
+
 }

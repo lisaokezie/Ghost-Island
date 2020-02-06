@@ -74,5 +74,11 @@ public class Enemy : MonoBehaviour
         
     }
 
-   
+    public void Die()
+    {        
+        Destroy(gameObject);
+        Debug.Log("Enemy killed!");
+    }
+
+
 }
