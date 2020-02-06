@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal()
     {
-        currentHealth += 5;
+        currentHealth += 10;
         healthSlider.value = currentHealth;
     }
 

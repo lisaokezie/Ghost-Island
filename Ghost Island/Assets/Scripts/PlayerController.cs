@@ -10,13 +10,17 @@ public class PlayerController : MonoBehaviour
 
     public GameObject projectilePrefab;
     public GameObject weapon;
+    public GameObject ShootingPosition;
 
+    public GameObject Flash;
+    public GameObject MuzzleLight;
 
    // UIManager uiManager;
     public bool isGameOver = false;
     public bool hasWeapon = false;
     public bool hasWon = false;
     public bool isPaused = false;
+
 
     // Screens
     public GameObject winnerScreen;
@@ -44,23 +48,37 @@ public class PlayerController : MonoBehaviour
         {
             itemsUI[i].SetActive(false);
         }
+
+        Flash.SetActive(false);
     }
 
     private void Update()
     {
-        //if(hasWeapon)
-        //{
-        //    weapon.SetActive(true);
-        //}
+        Flash.SetActive(false);
+        MuzzleLight.SetActive(false);
 
-        //if (hasWeapon == false)
-        //{
-        //    weapon.SetActive(false);
-        //}
+        if (hasWeapon)
+        {
+            weapon.SetActive(true);
+        }
 
-        if(hasWon == true)
+        if (hasWeapon == false)
+        {
+            weapon.SetActive(false);
+        }
+
+        if (hasWon == true)
         {
             winnerScreen.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
+        {
+            Flash.SetActive(true);
+            MuzzleLight.SetActive(true);
+            Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
+            nextFire = Time.time + fireRate;
+            audioManager.PlayShootAudio();
         }
 
         // Pause Screen
@@ -89,14 +107,16 @@ public class PlayerController : MonoBehaviour
 
         }
         }
+
+
     void LateUpdate()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
-        {
-            Instantiate(projectilePrefab, Camera.main.transform.position, transform.rotation);
-            nextFire = Time.time + fireRate;
-            audioManager.PlayShootAudio();
-        }
+        //if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && hasWeapon)
+        //{
+        //    Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
+        //    nextFire = Time.time + fireRate;
+        //    audioManager.PlayShootAudio();
+        //}
     }
 
     

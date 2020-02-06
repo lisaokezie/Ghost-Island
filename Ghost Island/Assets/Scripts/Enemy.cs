@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody playerRB;
     private GameObject player;
     public float speed = 1;
+    public int damage = 5;
 
     PlayerHealth playerHealth;
 
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
         if (playerHealth.currentHealth > 0)
         {
             // ... damage the player.
-            playerHealth.TakeDamage(0);
+            playerHealth.TakeDamage(damage);
         }
     }
 
