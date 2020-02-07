@@ -56,6 +56,12 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
+    public void Damage()
+    {
+        currentHealth -= 5;
+        healthSlider.value = currentHealth;
+    }
+
     void Death()
     {
         

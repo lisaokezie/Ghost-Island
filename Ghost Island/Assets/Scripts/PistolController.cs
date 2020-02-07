@@ -37,6 +37,12 @@ public class PistolController : MonoBehaviour
 
     }
 
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -54,10 +60,12 @@ public class PistolController : MonoBehaviour
             
             //Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
             nextFire = Time.time + fireRate;
-            Shoot();        
-
+            MuzzleFlash.Play();
+            Shoot();
+            
             audioManager.PlayShootAudio();
-           
+
+            animator.SetTrigger("shoot");
         }
 
         if (currentAmmo <= 0)
@@ -70,7 +78,7 @@ public class PistolController : MonoBehaviour
 
     private void LateUpdate()
     {
-        ammoDisplay.text = currentAmmo.ToString() + " / ∞";
+        ammoDisplay.text = currentAmmo.ToString() + " | ∞";
 
 
     }
@@ -83,21 +91,19 @@ public class PistolController : MonoBehaviour
 
         animator.SetBool("reloading", true);
 
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(reloadTime - .25f);
 
         animator.SetBool("reloading", false);
-        
+
+        yield return new WaitForSeconds(.25f);
+
         currentAmmo = maxAmmo;
 
         isReloading = false;
     }
 
     void Shoot()
-    {
-        animator.SetTrigger("shoot");
-
-        MuzzleFlash.Play();
-        
+    {        
 
         currentAmmo--;
 
