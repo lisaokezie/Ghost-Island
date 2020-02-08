@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
+    AudioManager audioManager;
 
     public bool isDead;                                              
     //bool damaged;
@@ -18,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -40,7 +42,8 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Player ist gestorben!");
             Death();
-            PauseGame();  
+            PauseGame();
+            audioManager.PlayGameOverAudio();
         }
     }
 
@@ -60,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= 5;
         healthSlider.value = currentHealth;
+       
     }
 
     void Death()

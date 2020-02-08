@@ -89,6 +89,8 @@ public class PistolController : MonoBehaviour
 
         Debug.Log("Reloading...");
 
+        audioManager.PlayReloadAudio();
+
         animator.SetBool("reloading", true);
 
         yield return new WaitForSeconds(reloadTime - .25f);

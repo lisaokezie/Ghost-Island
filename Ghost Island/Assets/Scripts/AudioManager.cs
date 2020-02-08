@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     AudioSource GameOver;
     public AudioClip WinMusicAudio;
     AudioSource WinMusic;
+    public AudioClip ReloadAudio;
+    AudioSource Reload;
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class AudioManager : MonoBehaviour
         Weapon = GetComponent<AudioSource>();
         GameOver = GetComponent<AudioSource>();
         WinMusic = GetComponent<AudioSource>();
+        Reload = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,11 +61,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameOverAudio()
     {
-        Weapon.PlayOneShot(GameOverAudio);
+        GameOver.PlayOneShot(GameOverAudio);
     }
 
     public void PlayWinMusicAudio()
     {
         WinMusic.PlayOneShot(WinMusicAudio);
+    }
+
+    public void PlayReloadAudio()
+    {
+        Reload.PlayOneShot(ReloadAudio);
     }
 }

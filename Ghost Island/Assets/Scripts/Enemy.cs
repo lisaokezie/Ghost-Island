@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int damage = 5;
 
     PlayerHealth playerHealth;
+    AudioManager audioManager;
 
     //public GameObject spawnManager;
 
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("FPSController");
 
         playerHealth = player.GetComponent<PlayerHealth>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         //enemyCount = SpawnManager.enemiesAlive;
 
@@ -70,6 +72,7 @@ public class Enemy : MonoBehaviour
             Attack();
             Destroy(gameObject);
             SpawnManager.killEnemy();
+            audioManager.PlayEnemyAudio();
         }
         
     }

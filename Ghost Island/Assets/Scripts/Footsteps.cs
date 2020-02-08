@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     public class Footsteps : MonoBehaviour
     {
-        /*public List<GroundType> GroundTypes = new List<GroundType>();
+        public List<GroundType> GroundTypes = new List<GroundType>();
         public FirstPersonController FPC;
         public string currentground;
 
@@ -31,14 +31,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 setGroundType(GroundTypes[1]);
             else
                 setGroundType(GroundTypes[0]);
-        }*/
+        }
     }
 
-    //[System.Serializable]
-    //public class GroundType
-    //{
-    //    public string name;
-    //    public AudioClip[] footstepsounds;
+    [System.Serializable]
+    public class GroundType
+    {
+        public string name;
+        public AudioClip[] footstepsounds;
    
-    //}
+    }
 }
