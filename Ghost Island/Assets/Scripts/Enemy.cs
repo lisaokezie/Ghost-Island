@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
             Attack();
             Destroy(gameObject);
             SpawnManager.killEnemy();
-            audioManager.PlayEnemyAudio();
+            audioManager.PlayDamageAudio();
         }
         
     }
