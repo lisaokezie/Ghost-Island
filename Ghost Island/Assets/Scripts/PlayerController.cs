@@ -47,15 +47,15 @@ public class PlayerController : MonoBehaviour
     {
 
 
-        //if (hasWeapon)
-        //{
-        //    weapon.SetActive(true);
-        //}
+        if (hasWeapon)
+        {
+           weapon.SetActive(true);
+        }
 
-        //if (hasWeapon == false)
-        //{
-        //    weapon.SetActive(false);
-        //}
+        if (hasWeapon == false)
+        {
+            weapon.SetActive(false);
+        }
 
        
 

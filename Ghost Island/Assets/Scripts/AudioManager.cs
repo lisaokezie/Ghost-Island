@@ -10,8 +10,6 @@ public class AudioManager : MonoBehaviour
     AudioSource Item;
     public AudioClip ShootAudio;
     AudioSource Shoot;
-    public AudioClip EnemyAudio;
-    AudioSource Enemy;
     public AudioClip WeaponAudio;
     AudioSource Weapon;
     public AudioClip GameOverAudio;
@@ -30,7 +28,6 @@ public class AudioManager : MonoBehaviour
         Energy = GetComponent<AudioSource>();
         Item = GetComponent<AudioSource>();
         Shoot = GetComponent<AudioSource>();
-        Enemy = GetComponent<AudioSource>();
         Weapon = GetComponent<AudioSource>();
         GameOver = GetComponent<AudioSource>();
         WinMusic = GetComponent<AudioSource>();
@@ -53,11 +50,6 @@ public class AudioManager : MonoBehaviour
     public void PlayShootAudio()
     {
         Shoot.PlayOneShot(ShootAudio);
-    }
-
-    public void PlayEnemyAudio()
-    {
-        Enemy.PlayOneShot(EnemyAudio);
     }
 
     public void PlayWeaponAudio()
