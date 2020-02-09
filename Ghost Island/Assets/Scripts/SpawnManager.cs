@@ -62,6 +62,12 @@ public class SpawnManager : MonoBehaviour
 
         isSpawning = true;
 
+        if (enemiesAlive == 0)
+        {
+            yield return new WaitForSeconds(20f);
+
+        }
+
         yield return new WaitForSeconds(2.5f);
         if (enemiesAlive < 10)
         {

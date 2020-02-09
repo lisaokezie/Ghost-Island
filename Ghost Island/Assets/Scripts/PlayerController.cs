@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasWon == true)
         {
+            Time.timeScale = 0;
             winnerScreen.SetActive(true);
         }
 
@@ -125,7 +126,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Weapon"))
         {
             Debug.Log("Weapon wurde aufgesammelt");
-            other.gameObject.SetActive(true);
+            weapon.SetActive(true);
             Destroy(other.gameObject);
             hasWeapon = true;
             audioManager.PlayWeaponAudio();
@@ -154,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("WinTrigger"))
         {
-            hasWon = true;
+            hasWon = true;            
             audioManager.PlayWinMusicAudio();
         }
     }

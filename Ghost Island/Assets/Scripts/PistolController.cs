@@ -10,7 +10,6 @@ public class PistolController : MonoBehaviour
     public GameObject projectilePrefab;
 
 
-
     public float fireRate = 1;
     private float nextFire = 0;
     public ParticleSystem MuzzleFlash;
@@ -50,6 +49,7 @@ public class PistolController : MonoBehaviour
     void Update()
     {
 
+       // weapon = thePlayer.hasWeapon;
 
         if (isReloading)
         {

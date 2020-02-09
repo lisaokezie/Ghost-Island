@@ -8,8 +8,6 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        //Set Cursor to not be visible
-        Cursor.visible = true;
     }
     //public GameObject manual;
 
