@@ -3,7 +3,22 @@ guid: 54079eb305f5f6645a53daa6ef222cb5
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rot dunkel
+    second: {fileID: 2100000, guid: d4f665f3fd61f8447b539bec85fc16b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Schwarz
+    second: {fileID: 2100000, guid: 22c103a4bc6e88340881957effd22235, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Wei\xDF"
+    second: {fileID: 2100000, guid: 199bb03294bdc814a9076b462ceea57d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
