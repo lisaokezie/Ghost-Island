@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     public void GoToLevell1()
     {
-        SceneManager.LoadScene("GhostIsland1812");
+        SceneManager.LoadScene("Game");
     }
 
     public static void GoToMenu()

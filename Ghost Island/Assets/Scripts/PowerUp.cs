@@ -44,7 +44,7 @@ public class PowerUp : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Debug.Log("Pilz heilt Player");
+           
             Heal();
             Destroy(gameObject);
             audioManager.PlayEnergyAudio();

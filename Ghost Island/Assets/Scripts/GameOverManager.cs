@@ -29,7 +29,7 @@ public class GameOverManager : MonoBehaviour
         if (playerHealth.isDead == true)
         {
             gameOverScreen.SetActive(true);
-            Debug.Log("Game Over!");
+            
            
         }
     }

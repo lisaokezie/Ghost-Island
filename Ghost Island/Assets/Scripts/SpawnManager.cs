@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
         while (enemiesAlive < 12 && enemiesAlive >= 0 && (!pc.isGameOver || !pc.hasWon)) { 
             InvokeRepeating("SpawnEnemies", delay, interval);
             enemiesAlive++;
-           
+            Debug.Log(enemiesAlive);
         }
     }
 
@@ -59,5 +59,7 @@ public class SpawnManager : MonoBehaviour
         Instantiate(enemiesPrefabs[randIndex], position, enemiesPrefabs[randIndex].transform.rotation);
 
         enemiesAlive++;
+        Debug.Log(enemiesAlive);
+
     }
 }
