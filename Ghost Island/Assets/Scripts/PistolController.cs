@@ -7,6 +7,8 @@ public class PistolController : MonoBehaviour
 {
 
     public GameObject ShootingPosition;
+    public GameObject projectilePrefab;
+
 
     public float fireRate = 1;
     private float nextFire = 0;
@@ -58,10 +60,11 @@ public class PistolController : MonoBehaviour
         {
             
             
-            //Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
+            Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
+            currentAmmo--;
             nextFire = Time.time + fireRate;
             MuzzleFlash.Play();
-            Shoot();
+            //Shoot();
             
             audioManager.PlayShootAudio();
 
@@ -107,7 +110,7 @@ public class PistolController : MonoBehaviour
     void Shoot()
     {        
 
-        currentAmmo--;
+        
 
         RaycastHit hit;
 
