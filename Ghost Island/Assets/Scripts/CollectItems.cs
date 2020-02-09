@@ -27,6 +27,7 @@ public class CollectItems : MonoBehaviour
     //Player
     private Rigidbody playerRB;
     private GameObject player;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class CollectItems : MonoBehaviour
 
         playerRB = GetComponent<Rigidbody>();
         player = GameObject.Find("FPSController");
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
 
         for (int i = 0; i < itemsUI.Length; i++)
@@ -54,6 +56,7 @@ public class CollectItems : MonoBehaviour
         if(collectedItems == 5)
         {
             Debug.Log("Alle Items wurden aufgesammelt");
+            audioManager.PlayAllItemsAudio();
         }
     }
 
