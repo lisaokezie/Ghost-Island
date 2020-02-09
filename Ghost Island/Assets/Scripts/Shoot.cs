@@ -9,8 +9,6 @@ public class Shoot : MonoBehaviour
 
     Vector3 mPrevPos;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +30,7 @@ public class Shoot : MonoBehaviour
             if (hits[i].collider.tag == "Enemy")
             {
                 Destroy(hits[i].collider.gameObject);
+                SpawnManager.killEnemy();
             }
         }
 

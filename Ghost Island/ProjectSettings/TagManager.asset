@@ -15,6 +15,7 @@ TagManager:
   - Item
   - WinTrigger
   - Holz
+  - Treehouse
   layers:
   - Default
   - TransparentFX

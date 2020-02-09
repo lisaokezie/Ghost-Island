@@ -9,18 +9,12 @@ public class GameOverManager : MonoBehaviour
     public GameObject gameOverScreen;
     private GameObject player;
 
-
-
     void Start()
     {
         gameOverScreen.SetActive(false);
 
         player = GameObject.Find("FPSController");
         playerHealth = player.GetComponent<PlayerHealth>();
-
-       
-
-
 
     }
 
@@ -29,8 +23,7 @@ public class GameOverManager : MonoBehaviour
         if (playerHealth.isDead == true)
         {
             gameOverScreen.SetActive(true);
-            
-           
+            Time.timeScale = 0;
         }
     }
 }

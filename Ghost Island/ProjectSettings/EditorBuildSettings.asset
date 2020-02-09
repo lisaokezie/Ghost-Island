@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/GhostIslandGame/01_MainMenu.unity
     guid: 82983e5e563ca4509a32c344f608aa7c
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/GhostIslandGame/02_Game.unity
     guid: f54a8fe9ceb25ef4a87e8380c3c5d7be
   m_configObjects: {}

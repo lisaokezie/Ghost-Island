@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
+    void Start()
+    {
+        //Set Cursor to not be visible
+        Cursor.visible = true;
+    }
+    //public GameObject manual;
+
     //void Update()
     //{
     //    if (Input.GetKeyDown(KeyCode.P))
@@ -16,13 +23,23 @@ public class UIManager : MonoBehaviour
 
     public void GoToLevell1()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("02_Game");
     }
 
     public static void GoToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("01_MainMenu");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    //public void Manual()
+    //{
+    //    manual.SetActive(true);
+    //}
 
     //public void GoToPauseMenu()
     //{

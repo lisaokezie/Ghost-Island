@@ -12,13 +12,6 @@ public class Enemy : MonoBehaviour
     PlayerHealth playerHealth;
     AudioManager audioManager;
 
-    //public GameObject spawnManager;
-
-    //public SpawnManager spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-    //public static int enemyCount;
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,29 +21,16 @@ public class Enemy : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
-        //enemyCount = SpawnManager.enemiesAlive;
-
-        //spawnManager = GameObject.Find("SpawnManager");
-        //spawnManager
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.LookAt(player.transform);
-        //transform.Translate(0, 0, speed * Time.deltaTime);
-
-        //enemyCount = SpawnManager.enemiesAlive;
 
         transform.LookAt(player.transform);
 
-        // Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         transform.position += transform.forward * speed * Time.deltaTime;
-            
-       // playerRB.AddForce(lookDirection * speed * Time.deltaTime);
-        
+               
     }
 
     void Attack()
@@ -76,12 +56,6 @@ public class Enemy : MonoBehaviour
         }
         
     }
-
-    //public void Die()
-    //{        
-    //    Destroy(gameObject);
-    //    Debug.Log("Enemy killed!");
-    //}
 
 
 }

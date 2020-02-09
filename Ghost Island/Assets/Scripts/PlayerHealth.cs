@@ -11,13 +11,16 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider healthSlider;
     AudioManager audioManager;
-
+    private GameObject player;
+    //PlayerController pc;
     public bool isDead;                                              
     //bool damaged;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("FPSController");
+
         currentHealth = startingHealth;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
@@ -42,16 +45,11 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Player ist gestorben!");
             Death();
-            PauseGame();
             audioManager.PlayGameOverAudio();
         }
     }
 
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
+   
 
     public void Heal()
     {
