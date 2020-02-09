@@ -10,6 +10,7 @@ public class PistolController : MonoBehaviour
     public GameObject projectilePrefab;
 
 
+
     public float fireRate = 1;
     private float nextFire = 0;
     public ParticleSystem MuzzleFlash;
@@ -58,14 +59,14 @@ public class PistolController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire && weapon)
         {
-            
-            
+
+
             Instantiate(projectilePrefab, ShootingPosition.transform.position, ShootingPosition.transform.rotation);
             currentAmmo--;
             nextFire = Time.time + fireRate;
             MuzzleFlash.Play();
             //Shoot();
-            
+
             audioManager.PlayShootAudio();
 
             animator.SetTrigger("shoot");
@@ -108,20 +109,20 @@ public class PistolController : MonoBehaviour
     }
 
     void Shoot()
-    {        
+    {
 
-        
+
 
         RaycastHit hit;
 
-        if(Physics.Raycast(ShootingPosition.transform.position, ShootingPosition.transform.forward, out hit))
+        if (Physics.Raycast(ShootingPosition.transform.position, ShootingPosition.transform.forward, out hit))
         {
-            
+
             Enemy enemy = hit.transform.GetComponent<Enemy>();
 
             Debug.Log(hit.transform.GetComponent<Enemy>());
 
-            if(hit.collider.tag == "Enemy")
+            if (hit.collider.tag == "Enemy")
             {
                 Destroy(hit.transform.gameObject);
             }

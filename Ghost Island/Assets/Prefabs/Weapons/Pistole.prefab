@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &93095608
 Transform:
   m_ObjectHideFlags: 0
@@ -4981,6 +4981,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootingPosition: {fileID: 28647400}
+  projectilePrefab: {fileID: 6705578580010399823, guid: 92e1426546f02564abf0c0852310f766,
+    type: 3}
   fireRate: 1
   MuzzleFlash: {fileID: 93095610}
   maxAmmo: 8

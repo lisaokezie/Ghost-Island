@@ -20,13 +20,21 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerHealth.currentHealth <= 0)
+        {
+            playerHealth.Death();
+        }
 
     }
 
 
     void damage()
     {
-            playerHealth.Damage();    
+            if (playerHealth.currentHealth > 0)
+        {
+            // ... damage the player.
+            playerHealth.Damage();
+        }   
     }
 
     void OnTriggerEnter(Collider other)
