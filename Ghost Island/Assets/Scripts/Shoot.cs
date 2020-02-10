@@ -9,13 +9,11 @@ public class Shoot : MonoBehaviour
 
     Vector3 mPrevPos;
 
-    // Start is called before the first frame update
     void Start()
     {
         mPrevPos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         mPrevPos = transform.position;
@@ -26,7 +24,6 @@ public class Shoot : MonoBehaviour
 
         for(int i = 0; i < hits.Length; i++)
         {
-            // Debug.Log(hits[i].collider.gameObject.name);
             if (hits[i].collider.tag == "Enemy")
             {
                 Destroy(hits[i].collider.gameObject);

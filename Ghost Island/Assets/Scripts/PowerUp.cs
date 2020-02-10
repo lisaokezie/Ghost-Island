@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-
     PlayerHealth playerHealth;
 
     private GameObject player;
 
     AudioManager audioManager;
-
-
-
-
-    // Start is called before the first frame update
+ 
     void Start()
     {
         player = GameObject.Find("FPSController");
@@ -23,19 +18,10 @@ public class PowerUp : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     void Heal()
     {
-        // If the player has health.
         if (playerHealth.currentHealth > 0 && playerHealth.currentHealth < 100)
         {
-            // heal
             playerHealth.Heal();
         }
     }

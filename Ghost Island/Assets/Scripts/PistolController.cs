@@ -27,8 +27,6 @@ public class PistolController : MonoBehaviour
 
     AudioManager audioManager;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -45,11 +43,8 @@ public class PistolController : MonoBehaviour
         animator.SetBool("Reloading", false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-       // weapon = thePlayer.hasWeapon;
 
         if (isReloading)
         {
@@ -65,7 +60,6 @@ public class PistolController : MonoBehaviour
             currentAmmo--;
             nextFire = Time.time + fireRate;
             MuzzleFlash.Play();
-            //Shoot();
 
             audioManager.PlayShootAudio();
 
@@ -91,8 +85,6 @@ public class PistolController : MonoBehaviour
     {
         isReloading = true;
 
-        Debug.Log("Reloading...");
-
         audioManager.PlayReloadAudio();
 
         animator.SetBool("reloading", true);
@@ -110,17 +102,12 @@ public class PistolController : MonoBehaviour
 
     void Shoot()
     {
-
-
-
         RaycastHit hit;
 
         if (Physics.Raycast(ShootingPosition.transform.position, ShootingPosition.transform.forward, out hit))
         {
 
             Enemy enemy = hit.transform.GetComponent<Enemy>();
-
-            Debug.Log(hit.transform.GetComponent<Enemy>());
 
             if (hit.collider.tag == "Enemy")
             {
@@ -130,9 +117,4 @@ public class PistolController : MonoBehaviour
 
 
     }
-
-    //void kill (Collider other)
-    //{
-    //    Destroy(other.gameObject);
-    //}
 }

@@ -75,13 +75,7 @@ public class SpawnManager : MonoBehaviour
             SpawnEnemies();
             enemiesAlive++;
         }
-        else
-        {
-            Debug.Log("Too many Enemies in the Game!");
-        }
-
-        Debug.Log(enemiesAlive);
-
+      
         isSpawning = false;
     }
 }

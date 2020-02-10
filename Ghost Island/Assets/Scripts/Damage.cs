@@ -8,8 +8,6 @@ public class Damage : MonoBehaviour
 
     private GameObject player;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("FPSController");
@@ -17,7 +15,6 @@ public class Damage : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (playerHealth.currentHealth <= 0)
@@ -32,7 +29,6 @@ public class Damage : MonoBehaviour
     {
             if (playerHealth.currentHealth > 0)
         {
-            // ... damage the player.
             playerHealth.Damage();
         }   
     }
@@ -41,7 +37,6 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Debug.Log("Feuer verbrennt Player");
             damage();
 
         }

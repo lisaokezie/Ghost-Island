@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         pauseScreen.SetActive(false);
         winnerScreen.SetActive(false);
         ladder.SetActive(false);
@@ -64,8 +65,6 @@ public class PlayerController : MonoBehaviour
             winnerScreen.SetActive(true);
         }
 
-       
-        // Pause Screen
         if (Input.GetKeyDown(KeyCode.P))
         {
            
@@ -80,13 +79,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-        // Game Over/Won: Press key to go back to Menu
         if (isPaused || isGameOver || hasWon)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                //gameObject.SetActive(false);
                 UIManager.QuitGame();
             }
 
@@ -107,7 +103,6 @@ public class PlayerController : MonoBehaviour
         if(collectedItems == 5)
         {
             ladder.SetActive(true);
-            Debug.Log("Baumhausleiter");
         }
     }
 
@@ -129,7 +124,6 @@ public class PlayerController : MonoBehaviour
         isPaused = false;
     }
 
-    //Wenn eine Kolllision mit einem GameObjekt (Tag: "Weapon") stattfindet, wird die Waffe aktiviert
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Weapon"))
@@ -143,7 +137,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Player wurde angegriffen");
-            //isGameOver = true;
         }
 
         if (other.gameObject.CompareTag("Item"))

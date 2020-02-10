@@ -20,8 +20,7 @@ public class AudioManager : MonoBehaviour
     AudioSource Reload;
     public AudioClip DamageAudio;
     AudioSource Damage;
-    public AudioClip AllItemsAudio;
-    AudioSource AllItems;
+   
 
     void Start()
     {
@@ -33,7 +32,7 @@ public class AudioManager : MonoBehaviour
         WinMusic = GetComponent<AudioSource>();
         Reload = GetComponent<AudioSource>();
         Damage = GetComponent<AudioSource>();
-        AllItems = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -77,8 +76,5 @@ public class AudioManager : MonoBehaviour
         Damage.PlayOneShot(DamageAudio);
     }
 
-    public void PlayAllItemsAudio()
-    {
-        AllItems.PlayOneShot(AllItemsAudio);
-    }
+   
 }

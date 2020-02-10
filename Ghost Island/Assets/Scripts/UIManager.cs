@@ -5,20 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-
-    void Start()
-    {
-    }
-    //public GameObject manual;
-
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.P))
-    //    {
-    //        SceneManager.LoadScene("PauseMenu");
-    //    }
-    //}
-
     public static void GoToLevell1()
     {
         SceneManager.LoadScene("02_Game");
@@ -27,6 +13,7 @@ public class UIManager : MonoBehaviour
     public void ReloadGame()
     {
         SceneManager.LoadScene("02_Game");
+        Time.timeScale = 1;
     }
 
     public static void GoToMenu()
@@ -44,17 +31,4 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    //public void Manual()
-    //{
-    //    manual.SetActive(true);
-    //}
-
-    //public void GoToPauseMenu()
-    //{
-
-    //    if (Input.GetKeyDown(KeyCode.P))
-    //    {
-    //        SceneManager.LoadScene("PauseMenu");
-    //    }
-    //}
 }

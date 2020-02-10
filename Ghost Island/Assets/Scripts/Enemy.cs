@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     PlayerHealth playerHealth;
     AudioManager audioManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -23,7 +22,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -36,10 +34,8 @@ public class Enemy : MonoBehaviour
     void Attack()
     {
 
-        // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {
-            // ... damage the player.
             playerHealth.TakeDamage(damage);
         }
     }
