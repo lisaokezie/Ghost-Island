@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         winnerScreen.SetActive(false);
-        ladder = GameObject.Find("Leiter");
         ladder.SetActive(false);
         weapon.SetActive(false);
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -85,11 +84,21 @@ public class PlayerController : MonoBehaviour
         // Game Over/Won: Press key to go back to Menu
         if (isPaused || isGameOver || hasWon)
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                UIManager.GoToMenu();
+                //gameObject.SetActive(false);
+                UIManager.QuitGame();
             }
 
+        }
+
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                UIManager.GoToLevell1();
+
+            }
         }
         }
     

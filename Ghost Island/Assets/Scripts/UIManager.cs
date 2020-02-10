@@ -19,7 +19,12 @@ public class UIManager : MonoBehaviour
     //    }
     //}
 
-    public void GoToLevell1()
+    public static void GoToLevell1()
+    {
+        SceneManager.LoadScene("02_Game");
+    }
+
+    public void ReloadGame()
     {
         SceneManager.LoadScene("02_Game");
     }
@@ -29,7 +34,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("01_MainMenu");
     }
 
-    public void QuitGame()
+    public static void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ExitGame()
     {
         Application.Quit();
     }

@@ -68,6 +68,7 @@ public class PlayerHealth : MonoBehaviour
     {
         
         isDead = true;
+        player.GetComponent<PlayerController>().isGameOver = true;
 
     }
 
